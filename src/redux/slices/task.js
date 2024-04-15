@@ -9,7 +9,7 @@ export const taskSlice = createSlice({
     initialState: initialstate,
     reducers: {
       setTask: (state, action) => {
-        const updatedTask = [...state.tasks, {id:action.payload.id,title:action.payload.title,status:"pending"}];
+        const updatedTask = [{id:action.payload.id,title:action.payload.title,status:"pending"},...state.tasks ];
         state.tasks=updatedTask;
         localStorage.setItem("tasks", JSON.stringify(updatedTask));
       },

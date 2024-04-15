@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const TodoCard = () => {
   const { tasks }=useSelector((state)=>state.task);
-  // console.log(tasks)
   return (
     <div className="w-[90%] mx-auto">
       { 
