@@ -14,14 +14,17 @@ export const taskSlice = createSlice({
         localStorage.setItem("tasks", JSON.stringify(updatedTask));
       },
       updatedTask:(state,action) =>{
-        const updatedTask=state.tasks.filter((task)=>task.id===action.payload)[0].status="completed";
+        const updatedTask=state.tasks.filter((task)=>task.id===action.payload);
+        updatedTask[0].status="completed"
+        state.tasks=[...state.tasks]
         localStorage.setItem("tasks", JSON.stringify(state.tasks));
       },
       removeTask:(state,action)=>{
         const updatedTask=state.tasks.filter((task)=>task.id!==action.payload);
-        state.tasks=updatedTask;
+        state.tasks=[...updatedTask];
         localStorage.setItem("tasks", JSON.stringify(updatedTask));
       }
+      
     },
   });
   

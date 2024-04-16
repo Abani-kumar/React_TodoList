@@ -7,8 +7,8 @@ const TodoCard = () => {
   return (
     <div className="w-[90%] mx-auto overflow-y-scroll">
       { 
-        tasks==="" ?<h1 className="text-center text-3xl text-slate-100 mt-6">you don't have any todo!</h1>:tasks?.map((task,index)=>(
-          <Todo key={index} task={task}/>
+        tasks==="" ?<h1 className="text-center text-3xl text-slate-100 mt-6">you don't have any todo!</h1>:tasks?.map((task)=>(
+          <Todo key={task.id} task={task}/>
         ))
       }
     </div>
